@@ -49,17 +49,18 @@ const ExpenseForm = (props) => {
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Name</label>
-          <input type="text" value={enteredName} onChange={nameChangeHandler} />
+          <input type="text" value={enteredName} onChange={nameChangeHandler} required/>
         </div>
         <div className="new-expense__control">
           <label>Price</label>
           {/* two way binding is wahat we are doing to the element properties by adding value and binding it to entered.. */}
           <input
-            type="Price"
+            type="number"
             min="0.1"
             step="0.1"
             value={enteredPrice}
             onChange={priceChangeHandler}
+            required
           />
         </div>
         <div className="new-expense__control">
@@ -70,6 +71,7 @@ const ExpenseForm = (props) => {
             max="2023-12-31"
             value={enteredDate}
             onChange={dateChangeHandler}
+            required
           />
         </div>
       </div>
